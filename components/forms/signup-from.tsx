@@ -55,10 +55,10 @@ export function SignUpForm({
       if (result?.success) {
         toast.success("Signed up successfully!");
       } else {
-        toast.error(`Login failed: ${result?.message}`);
+        toast.error(`SignUp failed: ${result?.message}`);
       }
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("SignUp failed:", error);
     } finally {
       setIsLoading(false);
     }
@@ -116,10 +116,7 @@ export function SignUpForm({
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="flex justify-between">
-                      <FormLabel>Password</FormLabel>
-                      <span><Link href="/forgot-password">Forgot password?</Link></span>
-                    </div>
+                    <FormLabel>Password</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="••••••••"
@@ -136,15 +133,15 @@ export function SignUpForm({
               </Button>
             </form>
           </Form>
-          <form>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <Link href="/sign-up" className="underline underline-offset-4">
-                Sign up
-              </Link>
-            </div>
-          </form>
         </CardContent>
+        <form>
+          <div className="mt-4 text-center text-sm">
+            Already have an account?{" "}
+            <Link href="/login" className="underline underline-offset-4">
+              SignUp
+            </Link>
+          </div>
+        </form>
       </Card>
     </div>
   );

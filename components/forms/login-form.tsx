@@ -24,10 +24,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { sign } from "crypto";
 import { signInUser } from "@/server/user";
-import { useState } from "react";
+import { use, useState } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 const formSchema = z.object({
   email: z.email(),
   password: z.string().min(8),
@@ -36,6 +38,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -53,6 +56,7 @@ export function LoginForm({
       console.log(result);
       if (result?.success) {
         toast.success("Logged in successfully!");
+        router.push("/dashboard");
       } else {
         toast.error(`Login failed: ${result?.message}`);
       }
@@ -121,7 +125,7 @@ export function LoginForm({
           <form>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <Link href="/sign-up" className="underline underline-offset-4">
+              <Link href="/signup" className="underline underline-offset-4">
                 Sign up
               </Link>
             </div>
