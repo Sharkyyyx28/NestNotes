@@ -10,7 +10,7 @@ export default function Footer() {
           aria-label="go home"
           className="mx-auto size-fit flex items-center gap-2"
         >
-          <Image src="/noteforge-logo.png" alt="logo" width={60} height={60} />
+          <Image src="/nestnotes-logo.png" alt="logo" width={60} height={60} />
 
           <span className="text-2xl font-bold">NestNotes</span>
         </Link>

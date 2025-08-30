@@ -36,8 +36,8 @@ export async function AppSidebar({
     <Sidebar {...props}>
       <SidebarHeader>
         <Link href="/dashboard" className="flex items-center gap-2 pl-2">
-          <Image src="/noteforge-logo.png" alt="Logo" width={32} height={32} />
-          <h2>NoteForge</h2>
+          <Image src="/nestnotes-logo.png" alt="Logo" width={32} height={32} />
+          <h2>NestNotes</h2>
         </Link>
 
         <React.Suspense>
