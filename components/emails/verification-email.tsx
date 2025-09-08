@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Body,
   Button,
@@ -11,14 +11,17 @@ import {
   Section,
   Text,
   Tailwind,
-} from '@react-email/components';
+} from "@react-email/components";
 
 interface VerificationEmailProps {
   userEmail: string;
   verificationUrl: string;
 }
 
-const VerificationEmail = ({ userEmail, verificationUrl }: VerificationEmailProps) => {
+const VerificationEmail = ({
+  userEmail,
+  verificationUrl,
+}: VerificationEmailProps) => {
   return (
     <Html lang="en" dir="ltr">
       <Head />
@@ -39,7 +42,8 @@ const VerificationEmail = ({ userEmail, verificationUrl }: VerificationEmailProp
                 Hi there,
               </Text>
               <Text className="text-[16px] text-gray-700 leading-[24px] m-0 mb-[32px]">
-                This verification link will expire in 24 hours for security purposes.
+                This verification link will expire in 24 hours for security
+                purposes.
               </Text>
 
               {/* Verification Button */}
@@ -53,7 +57,8 @@ const VerificationEmail = ({ userEmail, verificationUrl }: VerificationEmailProp
               </Section>
 
               <Text className="text-[14px] text-gray-600 leading-[20px] m-0 mb-[16px]">
-                If the button above doesn't work, you can copy and paste the following link into your browser:
+                If the button above doesn&apos;t work, you can copy and paste
+                the following link into your browser:
               </Text>
               <Text className="text-[14px] text-blue-600 leading-[20px] m-0 mb-[24px] break-all">
                 <Link href={verificationUrl} className="text-blue-600 underline">
@@ -62,7 +67,8 @@ const VerificationEmail = ({ userEmail, verificationUrl }: VerificationEmailProp
               </Text>
 
               <Text className="text-[14px] text-gray-600 leading-[20px] m-0 mb-[16px]">
-                If you didn't create an account with us, you can safely ignore this email.
+                If you didn&apos;t create an account with us, you can safely
+                ignore this email.
               </Text>
             </Section>
 
@@ -72,7 +78,12 @@ const VerificationEmail = ({ userEmail, verificationUrl }: VerificationEmailProp
                 This email was sent to <strong>{userEmail}</strong>
               </Text>
               <Text className="text-[12px] text-gray-500 leading-[16px] m-0">
-                <Link href="#" className="text-gray-500 underline ml-[4px]">Unsubscribe</Link>
+                <Link
+                  href="#"
+                  className="text-gray-500 underline ml-[4px]"
+                >
+                  Unsubscribe
+                </Link>
               </Text>
             </Section>
           </Container>
