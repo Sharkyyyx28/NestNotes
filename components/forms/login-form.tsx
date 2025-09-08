@@ -53,7 +53,6 @@ export function LoginForm({
     try {
       setIsLoading(true);
       const result = await signInUser(values.email, values.password);
-      console.log(result);
       if (result?.success) {
         toast.success("Logged in successfully!");
         router.push("/dashboard");
