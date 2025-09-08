@@ -3,6 +3,8 @@ import NotebookCard from "@/components/notebook-card";
 import { PageWrapper } from "@/components/page-wrapper";
 import { getNotebooks } from "@/server/notebooks";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const notebooks = await getNotebooks();
 
