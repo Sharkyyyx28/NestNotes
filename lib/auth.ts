@@ -10,16 +10,13 @@ import React from "react";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const auth = betterAuth({
-  emailAndPassword: {
-    enabled: true,
-  },
+  emailAndPassword: { enabled: true },
   database: drizzleAdapter(db, {
-    provider: "pg", // or "mysql", "sqlite"
+    provider: "pg",
     schema,
   }),
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
-      // send verification email with Resend
       await resend.emails.send({
         from: "Notes-app <website@resend.dev>",
         to: [user.email],
@@ -32,6 +29,5 @@ export const auth = betterAuth({
     },
     sendOnSignUp: true,
   },
-
   plugins: [nextCookies()],
 });
